@@ -20,3 +20,7 @@
     $('.navbar-collapse').collapse('hide');
   });
 })(jQuery); // End of use strict
+
+$('.update').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

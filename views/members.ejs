@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+
+<%- include('admin/partials/adminNav') %>
+
+<div class="container">
+    <h1>Members</h1>
+    <small> View members details.</small>
+    <hr>
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Address</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% members.forEach(function (member) { %>
+            <% if(member.role === "member") { %>
+            <tr>
+                <th scope="row"> <%= member.id  %> </th>
+                <td> <%= member.fullname  %> </td>
+                <td> <%= member.email  %> </td>
+                <td> <%= member.contact  %> </td>
+                <td> <%= member.address  %> </td>
+                <td><button type="button" data-toggle="modal" data-target="#delete" data-member-id="<%= member.id %>" 
+                        class="delete btn btn-danger btn-sm" name="delete">Delete</button>
+            </tr>
+            <% }}); %>
+
+        </tbody>
+    </table>
+
+
+    <div id="delete" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete User</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <strong>Are you sure you want to delete this user?</strong>
+                </div>
+                <div class="modal-footer">
+                    <form action="/members" method="POST">
+                        <input type="hidden" name="memberId" id="" name="memberId">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('partials/footer-sticky') %>
+
+<script type="text/javascript">
+    $('#delete').on('show.bs.modal', function (e) {
+
+        //get data-id attribute of the clicked element
+        var memberId = $(e.relatedTarget).data('member-id');
+
+        console.log(memberId)
+        //populate the textbox
+        $(e.currentTarget).find('input[name="memberId"]').val(memberId);
+    });
+</script>

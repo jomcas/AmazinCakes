@@ -1,0 +1,67 @@
+<body class="header" data-spy="scroll" data-target=".navbar" data-offset="100">
+
+  <!-- START NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="/admin>
+        <img class=" rounded" src="https://via.placeholder.com/200x50" alt="Logo" style="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/admin"> Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/orders">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/applicants">Applicants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/members">Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/reviews">Reviews</a>
+        </li>
+      </ul>
+
+
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link btn font-weight-bold" href="/account" role="button">Hello Admin!</a>
+          </li>
+          <li class="nav-item"> <button type="button" class="btn btn-danger my-2 my-sm-0 font-weight-bold" data-toggle="modal" data-target="#logout"> LOGOUT </button></li>
+        </ul>
+      </form>
+
+    </div>
+  </nav>
+
+  <div id="logout" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Confirm Logout</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <strong>Are you sure you want to logout ?</strong>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger"><a class="text-white text-decoration-none" href="/"
+              role="button">Logout</a></button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- END NAVIGATION BAR -->

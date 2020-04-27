@@ -1,3 +1,7 @@
+.header {
+  padding-top: 0;
+}
+
 body {
   padding-top: 60px;
 }
@@ -26,3 +30,10 @@ nav .navbar-nav .nav-link,
 nav .navbar-brand {
    color: #000;
 }
+
+/* .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+} */
+

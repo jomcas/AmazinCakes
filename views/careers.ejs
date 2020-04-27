@@ -1,0 +1,148 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<div class="container mt-5">
+    <h1>Career Opportunities </h1>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- Makes POST request to /register route -->
+                    <form action="/careers" method="POST">
+
+
+                        <div class="form-group">
+                            <label for="job">Career Job</label>
+                            <select class="form-control" id="jobSelect" required>
+                                <option>Baker</option>
+                                <option>Cashier</option>
+                                <option>Delivery Man</option>
+                                <option>Waiter</option>
+                            </select>
+
+                            <input type="hidden" name="job" id="job">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6 mb-6">
+                                <label for="validationTooltip01">First name</label>
+                                <input type="text" class="form-control" name="fname">
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                                <label for="validationTooltip02">Last name</label>
+                                <input type="text" class="form-control" name="lname">
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-10">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="genderName"
+                                            class="custom-control-input" value="male">
+                                        <label class="custom-control-label" for="customRadio1" checked>Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="genderName"
+                                            class="custom-control-input" value="female">
+                                        <label class="custom-control-label" for="customRadio2">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="gender" value="" id="gender">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="contact">Contact Number</label>
+                            <input type="tel" class="form-control" name="contact">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea class="form-control" id="addressTA" rows="2" name="address"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="resume">Upload Resume/CV Here</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="resume">
+                        </div>
+
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"
+                                name="agreeCheck">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Agree In Terms and Conditions.
+                            </label>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-dark float-right" onclick="displayValue()"
+                            data-toggle="modal" data-target="#success">Send
+                            Application</button>
+                    </form>
+
+                    <div class="modal fade" id="success" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sucessfully Sent</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Wait for a reply to your email for the status of your application.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<%- include('partials/footer') %>
+
+<script>
+    function displayValue() {
+        var ele = document.getElementsByName("genderName");
+        var inp = document.getElementById("gender");
+        ele.forEach(function (e) {
+            if (e.checked) {
+                inp.value = e.value;
+            }
+        })
+
+        var jobSelect = $('#jobSelect').find(":selected").text();
+        var job = document.getElementById("job");
+        job.value = jobSelect;
+
+    }
+</script>
