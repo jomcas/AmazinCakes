@@ -1,4 +1,4 @@
-#Amazin Cakes
+#### Amazin Cakes
 
 ### Edit the style.css file under the css folder
 
