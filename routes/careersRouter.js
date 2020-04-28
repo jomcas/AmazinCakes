@@ -1,6 +1,7 @@
 const fs = require("fs");
 const applicants = require("../data/applicants");
 const multer = require('multer');
+const mail =  require('../config/nodemailer');
 const careersRouter = function (app) {
 
     var storage = multer.diskStorage({
@@ -86,6 +87,8 @@ const careersRouter = function (app) {
                     res.render("index");
                 }
             });
+
+            mail.sendEmailCareer("amazincakesofficial@gmail.com", applicant.email, "We have received your application email! Wait for a reply for the response.");
         });
 };
 
