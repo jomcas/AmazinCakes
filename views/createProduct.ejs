@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<!-- Include a navbar for the member -->
+<%- include('partials/navbar') %>
+
+<div class="container mt-5">
+    <h1>Add New Product</h1>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- Makes POST request to /register route -->
+                    <form action="/addProduct" method="POST">
+
+                        <div class="form-group">
+                            <label for="job">Category</label>
+                            <select class="form-control" id="categorySelect" required>
+                                <option>Cakes</option>
+                                <option>Pastries</option>
+                                <option>Cupcakes</option>
+                                <option>Drink</option>
+                            </select>
+
+                            <input type="hidden" name="category" id="category">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Product Name</label>
+                            <input type="text" class="form-control" name="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Product Price</label>
+                            <input type="number" class="form-control" name="price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Description</label>
+                            <textarea class="form-control" id="addressTA" rows="3" name="description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Product Image</label>
+                            <input type="file" class="form-control" name="image">
+                        </div>
+
+                        <button type="submit" class="btn btn-dark float-right">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<script>
+    var categorySelect = $('#categorySelect').find(":selected").text();
+    var category = document.getElementById("category");
+    category.value = categorySelect;
+</script>

@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+<%- include('member/partials/navbar') %>
+
+<div id="home">
+    <section>
+        <div class="container">
+            <div class="row">
+                <h1 class="display-4">Amazin Cakes Online Delivery</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi voluptate quisquam ullam
+                    exercitationem tempore quia aut, perspiciatis amet voluptatum. Impedit vel in delectus tempora autem
+                    possimus earum, nesciunt ipsum ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aspernatur fugit, sunt iusto nam voluptatum ut minima facere? Obcaecati laudantium molestias ipsum
+                    tempore provident, quaerat natus vero sunt hic velit est!
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<% const categories = ["Cakes", "Pastries", "Cupcakes", "Drinks"]; %>
+<% for(i = 0 ; i < 4; i++) { %>
+
+<section class="bg-light" id="<%= categories[i] %>">
+    <div class="container">
+
+        <div class="row">
+            <h1 class="text-center display-4"><%= categories[i] %></h1>
+        </div>
+
+        <div class="row">
+
+            <% products.forEach(function (product) { %>
+            <% if (product.category === categories[i]) { %>
+            <div class="col-lg-3 col-md-4 col-6 filter">
+                <h3><%= product.name %></h3>
+                <h5><%= product.price %></h5>
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300"
+                        alt="<%= product.image %>">
+                </a>
+
+            </div>
+            <% }});  %>
+
+        </div>
+    </div>
+</section>
+
+
+<% } %>
+
+<%- include('partials/footer') %>

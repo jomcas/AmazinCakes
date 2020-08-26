@@ -1,0 +1,30 @@
+[{
+    "id": 1,
+    "category": "Cakes",
+    "name": "Black Forest",
+    "price": "599",
+    "description": "Masarap naman siya kahit papano",
+    "image": ""
+}, {
+    "id": 3,
+    "category": "Drinks",
+    "name": "Coke",
+    "price": "20",
+    "description": "Masarap naman siya kahit papano",
+    "image": ""
+}, {
+    "id": 5,
+    "category": "Pastries",
+    "name": "Candy",
+    "price": "100",
+    "description": "Masarap naman siya kahit papano",
+    "image": ""
+},
+{
+    "id": 6,
+    "category": "Cupcakes",
+    "name": "Lemon Square",
+    "price": "200",
+    "description": "Masarap naman siya kahit papano",
+    "image": ""
+}]

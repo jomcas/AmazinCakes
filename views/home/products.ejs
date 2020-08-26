@@ -1,111 +1,68 @@
 <br><br>
- 
- <!--START PRODUCTS -->
-  
- <div id="products">
-  
-    <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-4" align="center">Products</h1> <br>
-        <div class="row text-center">
-          <div class="col-md-12 text-center">
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-outline-dark filter-btn text-center" data-filter="all">All</button>
-              <button type="button" class="btn btn-outline-primary filter-btn text-center" data-filter="cakes">Cakes</button>
-              <button type="button" class="btn btn-outline-success filter-btn" data-filter="pastries">Pastries</button>
-              <button type="button" class="btn btn-outline-info filter-btn" data-filter="cupcakes">Cupcakes</button>
-              <button type="button" class="btn btn-outline-danger filter-btn" data-filter="drinks">Drinks</button>
-            </div>
+
+<!--START PRODUCTS -->
+
+<div id="products">
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4" align="center">Products</h1> <br>
+      <div class="row text-center">
+        <div class="col-md-12 text-center">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-dark filter-btn text-center" data-filter="All">All</button>
+            <button type="button" class="btn btn-outline-primary filter-btn text-center"
+              data-filter="Cakes">Cakes</button>
+            <button type="button" class="btn btn-outline-success filter-btn" data-filter="Pastries">Pastries</button>
+            <button type="button" class="btn btn-outline-info filter-btn" data-filter="Cupcakes">Cupcakes</button>
+            <button type="button" class="btn btn-outline-danger filter-btn" data-filter="Drinks">Drinks</button>
           </div>
         </div>
-        <br>
-        <div class="row text-center text-lg-left">
+      </div>
+      <br>
 
-          <div class="col-lg-3 col-md-4 col-6 filter cakes">
-            <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
+      <div class="row text-center text-lg-left">
 
-          <div class="col-lg-3 col-md-4 col-6 filter cakes">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 filter pastries">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 filter pastries">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 filter cupcakes">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 filter cupcakes">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 filter drinks">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-6 filter drinks">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
+        <% products.forEach(function (product) {  %>
 
-          <div class="col-lg-3 col-md-4 col-6 filter cakes">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
+        <div class="col-lg-3 col-md-4 col-6 filter <%= product.category %>">
+          <h3><%= product.name %></h3>
+          <h5>Php <%= product.price %> </h5>
+          <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail img-responsive " src="https://via.placeholder.com/400x300" alt="">
+          </a>
+        </div>
 
-          <div class="col-lg-3 col-md-4 col-6 filter drinks">
-            <a href="#" class="d-block mb-4 h-100 ">
-              <img class="img-fluid img-thumbnail " src="https://via.placeholder.com/400x300" alt="">
-            </a>
-          </div>
+        <% }); %>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br><br>
+
+  <section class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Featured Cake</h1>
+          <h2> <%= feature.name %> </h3>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent. Lorem
+              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua. Ut enim ad
+              minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non
+              <%= feature.description %></p>
+        </div>
+        <div class="col">
+          <img src="https://via.placeholder.com/500x350" alt="<%= feature.image %>">
         </div>
       </div>
     </div>
+  </section>
 
-      
-    <br><br>
-  
-    <section class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1 class="display-4">Featured Product</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col">
-            <img src="https://via.placeholder.com/500x350" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-  <!--END PRODUCTS -->
-
-  
+</div>
+<!--END PRODUCTS -->

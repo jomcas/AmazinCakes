@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(".filter-btn").click(function(){
         var value = $(this).attr('data-filter');
         
-        if(value == "all")
+        if(value == "All")
         {
             //$('.filter').removeClass('hidden');
             $('.filter').show('1000');
@@ -19,3 +19,5 @@ $(document).ready(function(){
     });
 
 });
+
+$(".filter-btn").click().toggleClass("active");

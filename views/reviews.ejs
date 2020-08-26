@@ -4,6 +4,7 @@
 <%- include('admin/partials/adminNav') %>
 
 <div class="container">
+
     <h1>Reviews</h1>
     <small> Read reviews about our services.</small>
     <hr>
@@ -27,15 +28,17 @@
                 <td> <%= review.dateWritten  %> </td>
                 <td> <%= review.fullname  %> </td>
                 <td> <%= review.comment  %> </td>
-                <td><button type="button" data-toggle="modal" data-target="#delete" data-review-id="<%= review.id %>" 
-                        class="delete btn btn-danger btn-sm" name="delete">Delete</button>
+                <td><button type="button" data-toggle="modal" data-target="#reviewsDelete"
+                        data-review-id="<%= review.id %>" class="delete btn btn-danger btn-sm"
+                        name="delete">Delete</button>
+                </td>
             </tr>
             <% }); %>
 
         </tbody>
     </table>
 
-    <div id="delete" class="modal fade" role="dialog">
+    <div id="reviewsDelete" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,12 +63,11 @@
 <%- include('partials/footer-sticky') %>
 
 <script type="text/javascript">
-    $('#delete').on('show.bs.modal', function (e) {
+    $('#reviewsDelete').on('show.bs.modal', function (e) {
 
         //get data-id attribute of the clicked element
         var reviewId = $(e.relatedTarget).data('review-id');
 
-        console.log(memberId)
         //populate the textbox
         $(e.currentTarget).find('input[name="reviewId"]').val(reviewId);
     });
