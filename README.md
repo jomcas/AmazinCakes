@@ -1,5 +1,7 @@
-#### Amazin Cakes
+# Amazin Cakes
 
-### Edit the style.css file under the css folder
-
-### Add your desired website name and logo as well if you may.
+## A web application using:
+* Sever: NodeJS
+* Web Server: Express
+* View: EJS
+* Databse: MySQL
